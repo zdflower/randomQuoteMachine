@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title> Random Quote Machine </title>
+
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+
+<script>
+$(document).ready(function(){
+	$("#getQuote").on("click", function(){
+		//$.getJSON("document.json", function(json){
+			
+//revisar 
+//esto funciona
+//pero tal vez sería mejor poder usar un archivo con frases
+//
+			var arrFrases = ["una frase", "otra frase", "una más", "otra todavía más larga"];
+			//json.forEach(function(val){
+			//	arrFrases.push(val);
+			//});
+			var hasta = arrFrases.length;
+			var index = Math.floor(Math.random() * 4);
+			var html = arrFrases[index];
+			$(".frase").html(html);
+		});
+	});
+</script>
+
+<style>
+	body {
+		background-color: plum;
+		margin: 50px 50px 5px 50px;
+	} 
+	
+	.padding10 {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+	}
+
+	.frase {
+		box-shadow: 10px 10px 5px;
+	}
+	
+  </style>
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+	<div class = "row text-center padding10"> 
+	<h1> Random Quote </h1>
+	</div>
+	<div class="row text-center padding10"> 
+		<div class="col-xs-4">  </div>
+		<div class="col-xs-4 well frase"> Acá va a ir otra frase. </div>
+		<div class="col-xs-4">  </div>
+	</div>
+	
+	<div class="row text-center padding10">
+		<button id="getQuote" class="btn btn-primary"> New Quote </button>
+	 </div>
+	
+</div>
+
+</body>
+</html>
