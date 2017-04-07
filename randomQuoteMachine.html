@@ -17,16 +17,44 @@ $(document).ready(function(){
 //esto funciona
 //pero tal vez sería mejor poder usar un archivo con frases
 //
-			var colores = ["plum", "green", "gray", "pink"];
-			var arrFrases = ["una frase", "otra frase", "una más", "otra todavía más larga"];
+
+//me gustaría tener un archivo con una frase y autor por línea
+//leer ese archivo línea a línea, crear un diccionario/tabla de hash /map con autor:frase
+//y luego guardar ese map a un archivo json
+
+
+			var arrObjFrases = [
+				{ 	quote: "una más",
+					autor: "un autor más"
+
+				},
+
+				{
+					quote: "una frase",
+					autor: "un autor"
+				},
+
+				{	
+					quote: "otra frase",
+					autor: "otro autor"
+				},
+
+				{	
+					quote: "un frase más larga",
+					autor: "un autor más largo"
+				}
+
+			];
+			var colores = ["plum", "green", "gray", "pink", "purple", "aquamarine", "cornsilk", "DarkOliveGreen", "MediumPurple", "Orchid"];
+			//var arrFrases = ["una frase", "otra frase", "una más", "otra todavía más larga"];
 			//json.forEach(function(val){
 			//	arrFrases.push(val);
 			//});
-			var hasta = arrFrases.length;
+			var hasta = Object.keys(arrObjFrases).length;//arrFrases.length;
 			var index = Math.floor(Math.random() * hasta);
-			var html = arrFrases[index];
-			$(".frase").html(html);
-			$("body").css("background-color", colores[Math.floor(Math.random() * colores.length)]); 
+			var html = "<blockquote>"+ arrObjFrases[index]["quote"] + "<footer> " + arrObjFrases[index]["autor"] +"</footer>" + "</blockquote>";//arrFrases[index];
+			$(".frase").html(html); 
+			$("body").css("background-color", colores[Math.floor(Math.random() * colores.length)]); //para cambiar de color de fondo al azar
 		});
 	});
 </script>
@@ -48,6 +76,9 @@ $(document).ready(function(){
 		box-shadow: 10px 10px 5px;
 	}
 	
+	.whiteText {
+		color: white;
+	}
   </style>
 
 </head>
@@ -56,7 +87,7 @@ $(document).ready(function(){
 
 <div class="container-fluid">
 	<div class = "row text-center padding10"> 
-	<h1> Random Quote </h1>
+	<h1 class= "whiteText"> Random Quote </h1>
 	</div>
 	<div class="row text-center padding10"> 
 		<div class="col-xs-4">  </div>
@@ -67,6 +98,9 @@ $(document).ready(function(){
 	<div class="row text-center padding10">
 		<button id="getQuote" class="btn btn-primary"> New Quote </button>
 	 </div>
+	 <div class="row text-center"> 
+	 	<footer class= "whiteText"> by ZDFlower </footer>
+	 </div> 
 	
 </div>
 
