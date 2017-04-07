@@ -17,14 +17,16 @@ $(document).ready(function(){
 //esto funciona
 //pero tal vez sería mejor poder usar un archivo con frases
 //
+			var colores = ["plum", "green", "gray", "pink"];
 			var arrFrases = ["una frase", "otra frase", "una más", "otra todavía más larga"];
 			//json.forEach(function(val){
 			//	arrFrases.push(val);
 			//});
 			var hasta = arrFrases.length;
-			var index = Math.floor(Math.random() * 4);
+			var index = Math.floor(Math.random() * hasta);
 			var html = arrFrases[index];
 			$(".frase").html(html);
+			$("body").css("background-color", colores[Math.floor(Math.random() * colores.length)]); 
 		});
 	});
 </script>
