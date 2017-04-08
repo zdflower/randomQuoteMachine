@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title> Random Quote Machine </title>
+
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+
+<script>
+$(document).ready(function(){
+	$("#getQuote").on("click", function(){
+
+			var arrObjEo = [
+				{
+					es: "El que pronto se levanta, pronto se enriquece",
+					eo: "Kiu frue leviĝas, facile riĉiĝas",
+					src: "https://es.wikibooks.org/wiki/Esperanto/Lecturas/Otros_proverbios"
+				},
+				{
+					es: "Más vale tarde que nunca.",
+					eo: "Pli bone malfrue ol neniam",
+					src: "https://es.wikibooks.org/wiki/Esperanto/Lecturas/Otros_proverbios"
+				},
+				
+				{
+					es: "Entre el dicho y el hecho hay un mar",
+					eo: "Inter diro kaj faro estas maro",
+					src: "https://es.wikibooks.org/wiki/Esperanto/Lecturas/Otros_proverbios"
+				},
+
+				{
+					es: "Donde se levanta el humo, ahí está el fuego",
+					eo: "Kie fumo leviĝas, tie fajro troviĝas",
+					src: "https://es.wikibooks.org/wiki/Esperanto/Lecturas/Otros_proverbios"
+				},
+
+				{
+					es: "Hablar mucho y decir mucho no es lo mismo. Sófocles",
+					eo: "Multe paroli kaj multe diri ne estas la samo. Sofoklo",
+					src: "https://es.wikibooks.org/wiki/Esperanto/Lecturas/Otros_proverbios"
+				}
+
+			];
+			var colores = ["plum", "green", "gray", "pink", "purple", "aquamarine", "DarkOliveGreen", "MediumPurple", "Orchid"];
+			var hasta = Object.keys(arrObjEo).length;
+			var index = Math.floor(Math.random() * hasta);
+			var html = "<blockquote> <p>"+ arrObjEo[index]["eo"] + "</p> <p>" + arrObjEo[index]["es"] + " </p> <footer> " + arrObjEo[index]["src"] +"</footer>" + "</blockquote>";
+			$(".frase").html(html); 
+			$("body").css("background-color", colores[Math.floor(Math.random() * colores.length)]); //para cambiar de color de fondo al azar
+		});
+	});
+</script>
+
+<style>
+	body {
+		background-color: plum;
+		margin: 50px 50px 5px 50px;
+	} 
+	
+	.padding10 {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+	}
+
+	.frase {
+		box-shadow: 10px 10px 5px;
+	}
+	
+	.whiteText {
+		color: white;
+	}
+  </style>
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+	<div class = "row text-center padding10"> 
+	<h1 class= "whiteText"> Random Quote Español - Esperanto </h1>
+	</div>
+	<div class="row text-center padding10"> 
+		<div class="col-xs-4">  </div>
+		<div class="col-xs-4 well frase">  </div>
+		<div class="col-xs-4">  </div>
+	</div>
+	
+	<div class="row text-center padding10">
+		<button id="getQuote" class="btn btn-primary"> New Quote </button>
+	 </div>
+	 <div class="row text-center"> 
+	 	<footer class= "whiteText"> by ZDFlower </footer>
+	 </div> 
+	
+</div>
+
+</body>
+</html>
