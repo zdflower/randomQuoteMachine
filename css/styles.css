@@ -1,0 +1,19 @@
+	body {
+		background-color: plum;
+		margin: 50px 50px 5px 50px;
+	} 
+	
+	.padding10 {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+	}
+
+	.frase {
+		box-shadow: 10px 10px 5px;
+	}
+	
+	.whiteText {
+		color: white;
+	}
