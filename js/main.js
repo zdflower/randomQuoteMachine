@@ -39,4 +39,10 @@ $(document).ready(function(){
 			$(".frase").html(html); 
 			$("body").css("background-color", colores[Math.floor(Math.random() * colores.length)]); //para cambiar de color de fondo al azar
 		});
+	//para que al clickear el botón de twitter se modifique el data-text y tome el texto de la frase
+	$("#twit").on("click", function(){
+		//acá tendría que obtener el contenido del div
+		var laFrase = $(".frase").html(); //estoy casi ahí.
+		$("#twit").attr("href", "https://twitter.com/intent/tweet?text=" + laFrase); //¿cómo indico el texto de la frase?
+		});
 	});
