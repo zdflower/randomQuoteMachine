@@ -38,11 +38,14 @@ $(document).ready(function(){
 			var html = "<blockquote> <p>"+ arrObjEo[index]["eo"] + "</p> <p>" + arrObjEo[index]["es"] + " </p> <footer> " + arrObjEo[index]["src"] +"</footer>" + "</blockquote>";
 			$(".frase").html(html); 
 			$("body").css("background-color", colores[Math.floor(Math.random() * colores.length)]); //para cambiar de color de fondo al azar
+			$("#twit").attr("href", "https://twitter.com/intent/tweet?text=" + arrObjEo[index]["eo"] + " de " + arrObjEo[index]["src"]);
 		});
+	/*
 	//para que al clickear el botón de twitter se modifique el data-text y tome el texto de la frase
-	$("#twit").on("click", function(){
+	$("#twit").on("click", function(){ //esto no hace falta. Puedo poner que se cambie cuando se cliquea el botón de las frases! que es lo que realmente quiero
 		//acá tendría que obtener el contenido del div
 		var laFrase = $(".frase").html(); //estoy casi ahí.
 		$("#twit").attr("href", "https://twitter.com/intent/tweet?text=" + laFrase); //¿cómo indico el texto de la frase?
 		});
+		*/
 	});

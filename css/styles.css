@@ -3,6 +3,11 @@
 		margin: 50px 50px 5px 50px;
 	} 
 	
+	blockquote {
+		border-right: none;
+		border-left: none;
+	}
+
 	.padding10 {
     padding-top: 10px;
     padding-left: 10px;
@@ -10,7 +15,7 @@
     padding-bottom: 10px;
 	}
 
-	.frase {
+	.sombra {
 		box-shadow: 10px 10px 5px;
 	}
 	
