@@ -22,3 +22,13 @@
 	.whiteText {
 		color: white;
 	}
+	
+/* Botones */
+
+	#getQuote {
+		float: right;
+	}
+
+	#twit {
+		float: left;
+	}
